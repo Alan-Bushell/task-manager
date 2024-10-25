@@ -24,18 +24,19 @@ function addTask() {
         const task = { text: taskText, priority: isPriority, completed: false, dueDate: dueDate };
         saveTask(task);
         taskInput.value = '';
-        priorityInput.checked = false;
+        priorityInput.checked = false; // boolean value for priority
         dueDateInput.value = '';
         loadTasks();
     }
 }
-
+// set the task to session
 function saveTask(task) {
     let tasks = JSON.parse(sessionStorage.getItem('tasks')) || [];
     tasks.push(task);
     sessionStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+// format due date
 function formatDueDate(dueDate) {
     const now = new Date();
     const due = new Date(dueDate);
@@ -55,6 +56,7 @@ function formatDueDate(dueDate) {
     }
 }
 
+// get tasks from session
 function loadTasks() {
     taskList.innerHTML = '';
     let tasks = JSON.parse(sessionStorage.getItem('tasks')) || [];
@@ -65,7 +67,7 @@ function loadTasks() {
         const li = document.createElement('li');
         li.className = task.completed ? 'completed' : '';
 
-        const textColor = task.priority ? 'style="color: blue;"' : '';
+        const textColor = task.priority ? 'style="color: blue;"' : ''; // set the color for priority 
         const dueDateText = task.dueDate ? formatDueDate(task.dueDate) : '';
 
         li.innerHTML = `
@@ -80,7 +82,7 @@ function loadTasks() {
         taskList.appendChild(li);
     });
 }
-
+// mark task as complete
 function toggleComplete(index) {
     let tasks = JSON.parse(sessionStorage.getItem('tasks'));
     tasks[index].completed = !tasks[index].completed;
@@ -88,6 +90,7 @@ function toggleComplete(index) {
     loadTasks();
 }
 
+// remove task
 function removeTask(index) {
     let tasks = JSON.parse(sessionStorage.getItem('tasks'));
     tasks.splice(index, 1);
