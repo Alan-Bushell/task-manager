@@ -42,7 +42,7 @@ function formatDueDate(dueDate) {
     const remTime = due - now;
     const remDays = Math.ceil(remTime / (1000 * 60 * 60 * 24));
 
-    if (remDays < 30 && diffDays >= 0) {
+    if (remDays < 30 && remDays >= 0) {
         return `${remDays} days remaining`;
     } else if (remDays < 0) {
         return 'Overdue';
