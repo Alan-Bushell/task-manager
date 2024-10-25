@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/1b022f26d4.js" crossorigin="anonymous"></script>
+    <!-- favicons -->
+    <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/android-chrome-512x512.png">
+    <!-- Css file -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>To Do for you</title>
+</head>
+<body>
+    <!-- Main Container -->
+    <nav>
+        <h1>To Do 4 U</h1>
+    </nav>
+    <div class="container">
+        <h2 class="cont-heading">Please add your tasks below</h2>
+        <p class="cont-sub">You can choose to add a due date or leave it blank. Priority tasks appear at the top of the list</p>
+        <input type="text" id="taskInput" placeholder="Enter your task here..." />
+        <label>
+            <input type="checkbox" id="priorityInput" /> Priority
+        </label>
+        <input type="datetime-local" id="dueDateInput" />
+        <ul id="taskList"></ul>
+    </div>
+    <!-- Script tag -->
+     <script src="assets/js/script.js"></script>
+</body>
+</html>
